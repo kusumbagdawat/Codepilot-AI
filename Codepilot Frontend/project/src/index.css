@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #0A0F0B;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0F0B;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 214, 143, 0.25);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 214, 143, 0.45);
+}
+
+@layer components {
+  .glass {
+    background: rgba(22, 30, 26, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 214, 143, 0.15);
+  }
+  .glass-strong {
+    background: rgba(16, 22, 20, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 214, 143, 0.2);
+  }
+  .glow-border {
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  }
+  .glow-border:hover {
+    border-color: rgba(0, 214, 143, 0.6);
+    box-shadow: 0 0 28px rgba(0, 214, 143, 0.25);
+    transform: translateY(-4px);
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, #00D68F 0%, #00A86B 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .btn-glow {
+    background: linear-gradient(135deg, #00D68F 0%, #00A86B 100%);
+    color: #04140D;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 214, 143, 0.3);
+  }
+  .btn-glow:hover {
+    box-shadow: 0 0 36px rgba(0, 214, 143, 0.55);
+    transform: translateY(-2px);
+  }
+}
+
+/* Page transition */
+.page-enter {
+  animation: fadeUp 0.45s ease forwards;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Grid background pattern */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 214, 143, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 214, 143, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
