@@ -4,12 +4,19 @@ import com.codepilot.codepilot_backend.dto.ChatRequest;
 import com.codepilot.codepilot_backend.dto.ChatResponse;
 import com.codepilot.codepilot_backend.service.ChatService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(
+        origins = {
+                "http://localhost:5173",
+                "https://codepilot-frontend-wpdq.onrender.com"
+        }
+)
 @RequestMapping("/api/chat")
 @RequiredArgsConstructor
 public class ChatController {
